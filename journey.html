@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="旅程スケジュール">
+    <meta name="description" content="旅程スケジュール作成アプリ">
     <title>旅程スケジュール - GitHub Pages</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,210 +11,93 @@
     <div class="container">
         <header class="header">
             <h1 class="title">🗺️ 旅程スケジュール</h1>
-            <p class="subtitle">あなたの旅の計画を確認しましょう</p>
+            <p class="subtitle">あなたの旅の計画を作成・管理しましょう</p>
         </header>
 
         <main class="main-content">
-            <!-- 旅程概要 -->
-            <section class="card">
-                <h2>📋 旅程概要</h2>
-                <div class="journey-overview">
-                    <div class="overview-item">
-                        <span class="overview-label">目的地：</span>
-                        <span class="overview-value">京都・大阪</span>
+            <!-- メインビュー：旅程一覧 -->
+            <div id="main-view">
+                <section class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h2>📋 旅程一覧</h2>
+                        <button class="btn" id="create-journey-btn">+ 新しい旅程を作成</button>
                     </div>
-                    <div class="overview-item">
-                        <span class="overview-label">期間：</span>
-                        <span class="overview-value">3泊4日</span>
-                    </div>
-                    <div class="overview-item">
-                        <span class="overview-label">出発日：</span>
-                        <span class="overview-value">2026年3月15日</span>
-                    </div>
-                </div>
-            </section>
 
-            <!-- 1日目 -->
-            <section class="card journey-day">
-                <div class="day-header">
-                    <h2>📅 1日目 - 京都到着</h2>
-                    <span class="day-date">3月15日（土）</span>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">09:00</div>
-                            <h3>🚅 東京駅出発</h3>
-                            <p>新幹線のぞみ123号で京都へ</p>
-                        </div>
+                    <div id="journey-list" class="journey-list">
+                        <p class="empty-state">まだ旅程が作成されていません。<br>「新しい旅程を作成」ボタンから始めましょう！</p>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">11:30</div>
-                            <h3>🏯 京都駅到着</h3>
-                            <p>ホテルにチェックイン後、昼食</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">14:00</div>
-                            <h3>⛩️ 清水寺参拝</h3>
-                            <p>清水の舞台と周辺散策</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">18:00</div>
-                            <h3>🍜 祇園でディナー</h3>
-                            <p>京料理を堪能</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <!-- 2日目 -->
-            <section class="card journey-day">
-                <div class="day-header">
-                    <h2>📅 2日目 - 京都観光</h2>
-                    <span class="day-date">3月16日（日）</span>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">08:00</div>
-                            <h3>🌸 嵐山散策</h3>
-                            <p>竹林の小径と渡月橋を訪問</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">12:00</div>
-                            <h3>🍱 嵐山でランチ</h3>
-                            <p>湯豆腐料理</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">15:00</div>
-                            <h3>⛩️ 伏見稲荷大社</h3>
-                            <p>千本鳥居を巡る</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">19:00</div>
-                            <h3>🎭 京都駅周辺でショッピング</h3>
-                            <p>お土産購入とディナー</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                <section class="cta-section">
+                    <h2>🌟 旅の計画を始めましょう</h2>
+                    <p>旅程を作成して、時系列で予定を管理できます。過去の旅行記録としても活用できます。</p>
+                    <a href="index.html" class="btn">ホームに戻る</a>
+                </section>
+            </div>
 
-            <!-- 3日目 -->
-            <section class="card journey-day">
-                <div class="day-header">
-                    <h2>📅 3日目 - 大阪へ移動</h2>
-                    <span class="day-date">3月17日（月）</span>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">10:00</div>
-                            <h3>🚃 大阪へ移動</h3>
-                            <p>JR京都線で約30分</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">12:00</div>
-                            <h3>🏰 大阪城見学</h3>
-                            <p>天守閣と周辺公園を散策</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">16:00</div>
-                            <h3>🛍️ 心斎橋・道頓堀</h3>
-                            <p>ショッピングと街歩き</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">19:00</div>
-                            <h3>🍢 たこ焼きと串カツ</h3>
-                            <p>大阪グルメを満喫</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <!-- 旅程作成・編集ビュー -->
+            <div id="create-view" style="display: none;">
+                <section class="card">
+                    <h2 id="form-title">✏️ 旅程を作成</h2>
 
-            <!-- 4日目 -->
-            <section class="card journey-day">
-                <div class="day-header">
-                    <h2>📅 4日目 - 帰路</h2>
-                    <span class="day-date">3月18日（火）</span>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">09:00</div>
-                            <h3>🎡 海遊館訪問</h3>
-                            <p>水族館で海の生物を鑑賞</p>
+                    <form id="journey-form">
+                        <div class="form-group">
+                            <label for="journey-title">旅程タイトル *</label>
+                            <input type="text" id="journey-title" required placeholder="例: 京都・大阪旅行">
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">13:00</div>
-                            <h3>🍱 最後のランチ</h3>
-                            <p>お好み焼きを楽しむ</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">16:00</div>
-                            <h3>🚅 新大阪駅出発</h3>
-                            <p>新幹線で東京へ</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <div class="timeline-time">18:30</div>
-                            <h3>🏠 東京駅到着</h3>
-                            <p>お疲れ様でした！</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            <!-- 持ち物リスト -->
-            <section class="cta-section">
-                <h2>🎒 持ち物チェックリスト</h2>
-                <div class="checklist">
-                    <div class="checklist-item">✓ パスポート・身分証明書</div>
-                    <div class="checklist-item">✓ 予約確認書</div>
-                    <div class="checklist-item">✓ 充電器・モバイルバッテリー</div>
-                    <div class="checklist-item">✓ 常備薬</div>
-                    <div class="checklist-item">✓ カメラ</div>
-                    <div class="checklist-item">✓ 快適な靴</div>
-                </div>
-                <a href="index.html" class="btn">ホームに戻る</a>
-            </section>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="destination">目的地 *</label>
+                                <input type="text" id="destination" required placeholder="例: 京都・大阪">
+                            </div>
+                            <div class="form-group">
+                                <label for="duration">期間 *</label>
+                                <input type="text" id="duration" required placeholder="例: 3泊4日">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="start-date">出発日 *</label>
+                            <input type="date" id="start-date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label>日程</label>
+                            <div id="days-container"></div>
+                            <button type="button" class="btn-secondary" id="add-day-btn">+ 日程を追加</button>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" id="cancel-btn">キャンセル</button>
+                            <button type="submit" class="btn">保存する</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <!-- 旅程詳細ビュー -->
+            <div id="detail-view" style="display: none;">
+                <section class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                        <div>
+                            <h2 id="detail-title"></h2>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button class="btn-secondary" id="edit-btn">✏️ 編集</button>
+                            <button class="btn-danger" id="delete-btn">🗑️ 削除</button>
+                        </div>
+                    </div>
+
+                    <div class="journey-overview" id="detail-overview"></div>
+                </section>
+
+                <div id="detail-days"></div>
+
+                <section class="cta-section">
+                    <button class="btn" id="back-to-list-btn">一覧に戻る</button>
+                </section>
+            </div>
         </main>
 
         <footer class="footer">
@@ -223,7 +106,344 @@
     </div>
 
     <script>
-        // シンプルなスクロールアニメーション
+        // データ管理
+        class JourneyManager {
+            constructor() {
+                this.journeys = this.loadJourneys();
+                this.currentJourneyId = null;
+                this.editingJourneyId = null;
+            }
+
+            loadJourneys() {
+                const data = localStorage.getItem('journeys');
+                return data ? JSON.parse(data) : [];
+            }
+
+            saveJourneys() {
+                localStorage.setItem('journeys', JSON.stringify(this.journeys));
+            }
+
+            addJourney(journey) {
+                journey.id = Date.now().toString();
+                journey.createdAt = new Date().toISOString();
+                this.journeys.unshift(journey);
+                this.saveJourneys();
+                return journey.id;
+            }
+
+            updateJourney(id, journey) {
+                const index = this.journeys.findIndex(j => j.id === id);
+                if (index !== -1) {
+                    this.journeys[index] = { ...journey, id, createdAt: this.journeys[index].createdAt };
+                    this.saveJourneys();
+                }
+            }
+
+            deleteJourney(id) {
+                this.journeys = this.journeys.filter(j => j.id !== id);
+                this.saveJourneys();
+            }
+
+            getJourney(id) {
+                return this.journeys.find(j => j.id === id);
+            }
+        }
+
+        const manager = new JourneyManager();
+
+        // ビュー管理
+        const views = {
+            main: document.getElementById('main-view'),
+            create: document.getElementById('create-view'),
+            detail: document.getElementById('detail-view')
+        };
+
+        function showView(viewName) {
+            Object.values(views).forEach(view => view.style.display = 'none');
+            views[viewName].style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // 旅程一覧の表示
+        function renderJourneyList() {
+            const listContainer = document.getElementById('journey-list');
+
+            if (manager.journeys.length === 0) {
+                listContainer.innerHTML = '<p class="empty-state">まだ旅程が作成されていません。<br>「新しい旅程を作成」ボタンから始めましょう！</p>';
+                return;
+            }
+
+            listContainer.innerHTML = manager.journeys.map(journey => `
+                <div class="journey-card" data-id="${journey.id}">
+                    <div class="journey-card-header">
+                        <h3>${escapeHtml(journey.title)}</h3>
+                        <span class="journey-date">${new Date(journey.startDate).toLocaleDateString('ja-JP')}</span>
+                    </div>
+                    <div class="journey-card-body">
+                        <div class="journey-info">
+                            <span>📍 ${escapeHtml(journey.destination)}</span>
+                            <span>📅 ${escapeHtml(journey.duration)}</span>
+                            <span>📝 ${journey.days.length}日分の予定</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // クリックイベント
+            document.querySelectorAll('.journey-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const id = card.dataset.id;
+                    showJourneyDetail(id);
+                });
+            });
+        }
+
+        // 旅程詳細の表示
+        function showJourneyDetail(id) {
+            const journey = manager.getJourney(id);
+            if (!journey) return;
+
+            manager.currentJourneyId = id;
+
+            document.getElementById('detail-title').textContent = journey.title;
+            document.getElementById('detail-overview').innerHTML = `
+                <div class="overview-item">
+                    <span class="overview-label">目的地：</span>
+                    <span class="overview-value">${escapeHtml(journey.destination)}</span>
+                </div>
+                <div class="overview-item">
+                    <span class="overview-label">期間：</span>
+                    <span class="overview-value">${escapeHtml(journey.duration)}</span>
+                </div>
+                <div class="overview-item">
+                    <span class="overview-label">出発日：</span>
+                    <span class="overview-value">${new Date(journey.startDate).toLocaleDateString('ja-JP')}</span>
+                </div>
+            `;
+
+            const daysHtml = journey.days.map((day, index) => `
+                <section class="card journey-day">
+                    <div class="day-header">
+                        <h2>📅 ${index + 1}日目${day.title ? ' - ' + escapeHtml(day.title) : ''}</h2>
+                        <span class="day-date">${day.date || ''}</span>
+                    </div>
+                    <div class="timeline">
+                        ${day.activities.map(activity => `
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <div class="timeline-time">${escapeHtml(activity.time)}</div>
+                                    <h3>${escapeHtml(activity.title)}</h3>
+                                    ${activity.description ? `<p>${escapeHtml(activity.description)}</p>` : ''}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+            `).join('');
+
+            document.getElementById('detail-days').innerHTML = daysHtml;
+            showView('detail');
+        }
+
+        // フォームの初期化
+        function initForm(journeyId = null) {
+            const form = document.getElementById('journey-form');
+            const daysContainer = document.getElementById('days-container');
+
+            form.reset();
+            daysContainer.innerHTML = '';
+            manager.editingJourneyId = journeyId;
+
+            if (journeyId) {
+                const journey = manager.getJourney(journeyId);
+                if (journey) {
+                    document.getElementById('form-title').textContent = '✏️ 旅程を編集';
+                    document.getElementById('journey-title').value = journey.title;
+                    document.getElementById('destination').value = journey.destination;
+                    document.getElementById('duration').value = journey.duration;
+                    document.getElementById('start-date').value = journey.startDate;
+
+                    journey.days.forEach(day => addDayToForm(day));
+                }
+            } else {
+                document.getElementById('form-title').textContent = '✏️ 旅程を作成';
+                addDayToForm(); // 最初の1日を追加
+            }
+        }
+
+        let dayCounter = 0;
+
+        function addDayToForm(dayData = null) {
+            dayCounter++;
+            const dayDiv = document.createElement('div');
+            dayDiv.className = 'day-form';
+            dayDiv.dataset.dayId = dayCounter;
+
+            dayDiv.innerHTML = `
+                <div class="day-form-header">
+                    <h3>${dayCounter}日目</h3>
+                    <button type="button" class="btn-remove" onclick="removeDay(${dayCounter})">削除</button>
+                </div>
+                <div class="form-group">
+                    <label>日付タイトル（任意）</label>
+                    <input type="text" class="day-title" placeholder="例: 京都到着" value="${dayData?.title || ''}">
+                </div>
+                <div class="form-group">
+                    <label>日付（任意）</label>
+                    <input type="text" class="day-date" placeholder="例: 3月15日（土）" value="${dayData?.date || ''}">
+                </div>
+                <div class="activities-container" data-day="${dayCounter}">
+                    ${dayData ? dayData.activities.map((activity, i) => createActivityHtml(dayCounter, i, activity)).join('') : createActivityHtml(dayCounter, 0)}
+                </div>
+                <button type="button" class="btn-secondary btn-sm" onclick="addActivity(${dayCounter})">+ 予定を追加</button>
+            `;
+
+            document.getElementById('days-container').appendChild(dayDiv);
+        }
+
+        function createActivityHtml(dayId, activityId, data = null) {
+            return `
+                <div class="activity-form" data-activity-id="${activityId}">
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 0 0 120px;">
+                            <label>時刻 *</label>
+                            <input type="text" class="activity-time" required placeholder="09:00" value="${data?.time || ''}">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label>予定 *</label>
+                            <input type="text" class="activity-title" required placeholder="例: 清水寺参拝" value="${data?.title || ''}">
+                        </div>
+                        <button type="button" class="btn-remove-activity" onclick="removeActivity(${dayId}, ${activityId})" title="削除">×</button>
+                    </div>
+                    <div class="form-group">
+                        <label>詳細（任意）</label>
+                        <input type="text" class="activity-description" placeholder="例: 清水の舞台と周辺散策" value="${data?.description || ''}">
+                    </div>
+                </div>
+            `;
+        }
+
+        function addActivity(dayId) {
+            const container = document.querySelector(`.activities-container[data-day="${dayId}"]`);
+            const activities = container.querySelectorAll('.activity-form');
+            const newId = activities.length;
+
+            const div = document.createElement('div');
+            div.innerHTML = createActivityHtml(dayId, newId);
+            container.appendChild(div.firstElementChild);
+        }
+
+        function removeDay(dayId) {
+            const dayForm = document.querySelector(`[data-day-id="${dayId}"]`);
+            if (dayForm) {
+                dayForm.remove();
+                renumberDays();
+            }
+        }
+
+        function removeActivity(dayId, activityId) {
+            const activity = document.querySelector(`.activities-container[data-day="${dayId}"] .activity-form[data-activity-id="${activityId}"]`);
+            if (activity) {
+                const container = activity.parentElement;
+                if (container.querySelectorAll('.activity-form').length > 1) {
+                    activity.remove();
+                } else {
+                    alert('各日には最低1つの予定が必要です');
+                }
+            }
+        }
+
+        function renumberDays() {
+            const days = document.querySelectorAll('.day-form');
+            days.forEach((day, index) => {
+                day.querySelector('h3').textContent = `${index + 1}日目`;
+            });
+        }
+
+        // フォーム送信
+        document.getElementById('journey-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const journey = {
+                title: document.getElementById('journey-title').value,
+                destination: document.getElementById('destination').value,
+                duration: document.getElementById('duration').value,
+                startDate: document.getElementById('start-date').value,
+                days: []
+            };
+
+            document.querySelectorAll('.day-form').forEach(dayForm => {
+                const day = {
+                    title: dayForm.querySelector('.day-title').value,
+                    date: dayForm.querySelector('.day-date').value,
+                    activities: []
+                };
+
+                dayForm.querySelectorAll('.activity-form').forEach(activityForm => {
+                    const activity = {
+                        time: activityForm.querySelector('.activity-time').value,
+                        title: activityForm.querySelector('.activity-title').value,
+                        description: activityForm.querySelector('.activity-description').value
+                    };
+                    day.activities.push(activity);
+                });
+
+                journey.days.push(day);
+            });
+
+            if (manager.editingJourneyId) {
+                manager.updateJourney(manager.editingJourneyId, journey);
+            } else {
+                manager.addJourney(journey);
+            }
+
+            renderJourneyList();
+            showView('main');
+        });
+
+        // イベントリスナー
+        document.getElementById('create-journey-btn').addEventListener('click', () => {
+            initForm();
+            showView('create');
+        });
+
+        document.getElementById('cancel-btn').addEventListener('click', () => {
+            showView('main');
+        });
+
+        document.getElementById('add-day-btn').addEventListener('click', () => {
+            addDayToForm();
+        });
+
+        document.getElementById('back-to-list-btn').addEventListener('click', () => {
+            showView('main');
+        });
+
+        document.getElementById('edit-btn').addEventListener('click', () => {
+            initForm(manager.currentJourneyId);
+            showView('create');
+        });
+
+        document.getElementById('delete-btn').addEventListener('click', () => {
+            if (confirm('この旅程を削除してもよろしいですか？')) {
+                manager.deleteJourney(manager.currentJourneyId);
+                renderJourneyList();
+                showView('main');
+            }
+        });
+
+        // ヘルパー関数
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // 初期化
+        renderJourneyList();
+
+        // アニメーション
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -233,12 +453,16 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.card, .cta-section').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
+        function observeCards() {
+            document.querySelectorAll('.card, .cta-section').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        }
+
+        observeCards();
     </script>
 </body>
 </html>
