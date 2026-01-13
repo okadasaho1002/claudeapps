@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GitHub Pagesへようこそ">
+    <title>ようこそ - GitHub Pages</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">🚀 GitHub Pagesへようこそ</h1>
+            <p class="subtitle">Claude Appsが作成したシンプルで美しいウェブページ</p>
+        </header>
+
+        <main class="main-content">
+            <section class="card">
+                <h2>✨ 特徴</h2>
+                <ul class="feature-list">
+                    <li>レスポンシブデザイン - スマホでもPCでも快適に閲覧</li>
+                    <li>モダンなUI - 洗練されたグラデーションとアニメーション</li>
+                    <li>シンプルな構造 - HTMLとCSSのみで構築</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>📚 GitHub Pagesについて</h2>
+                <p>GitHub Pagesは、GitHubリポジトリから直接静的なウェブサイトをホスティングできる無料のサービスです。</p>
+                <p>個人のポートフォリオ、プロジェクトのドキュメント、ブログなど、様々な用途に活用できます。</p>
+            </section>
+
+            <section class="card">
+                <h2>🎯 始め方</h2>
+                <ol class="steps-list">
+                    <li>リポジトリの Settings → Pages に移動</li>
+                    <li>Source で適切なブランチを選択</li>
+                    <li>保存して数分待つ</li>
+                    <li>公開されたURLにアクセス</li>
+                </ol>
+            </section>
+
+            <section class="cta-section">
+                <h2>🌟 さあ、始めましょう</h2>
+                <p>このページをカスタマイズして、あなただけのウェブサイトを作りましょう！</p>
+                <a href="https://docs.github.com/ja/pages" class="btn" target="_blank" rel="noopener">ドキュメントを見る</a>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Claude Apps. GitHub Pagesで公開中</p>
+        </footer>
+    </div>
+
+    <script>
+        // シンプルなスクロールアニメーション
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card, .cta-section').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
